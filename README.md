@@ -1,0 +1,1 @@
+This is the repository for projects in the "(Exo)Planetary Atmosphere: the Impact of Stars and Solar Physics on Habitability and Life" for the 3rd Jack Eddy Symposium. It is a place for scripts, issues, discussions, resources related to those projects
