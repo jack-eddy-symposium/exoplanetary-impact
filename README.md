@@ -5,13 +5,13 @@ Code based on original idea by Dan Marsh (NCAR, University of Leeds).
 
 ## Authors and contributers:
 
-Gregory Cooke (University of Leeds, pygjc@leeds.ac.uk)
-Allison Youngblood (NASA Goddard)
-Caitlin Gough (University of Leeds)
-James Colliander (University of British Columbia)
-Fernando Pérez (University of California, Berkeley)
-Meng Lin (Lockheed Martin Solar & Astrophysics Lab / SETI Institute)
-Dan Marsh (NCAR, University of Leeds)
+<p>Gregory Cooke (University of Leeds, pygjc@leeds.ac.uk)</p>
+<p>Allison Youngblood (NASA Goddard)</p>
+<p>Caitlin Gough (University of Leeds)</p>
+<p>James Colliander (University of British Columbia)</p>
+<p>Fernando Pérez (University of California, Berkeley)</p>
+<p>Meng Lin (Lockheed Martin Solar & Astrophysics Lab / SETI Institute)</p>
+<p>Dan Marsh (NCAR, University of Leeds)</p>
 
 ## User Guide
 
@@ -23,8 +23,9 @@ A file with wavelength and flux will be saved out.
 This is a .nc (netCDF file) for CAM/WACCM, for example.
 
 ## To do list (community input required)
+- Add in protoplanetary disk models
 - Add in stellar wind models
-- Add different climate model wavelength grids (only WACCM, ROCKE-3D, custom grids - and possibly Atmos - so far)
+- Add different climate model wavelength grids (only WACCM and custom grids so far)
 - These wavelength grids are not known to us (we could not find them)
 - Add in different ways to save the data (e.g. files such as .csv, .txt etc.) to be compatable with different models
 
