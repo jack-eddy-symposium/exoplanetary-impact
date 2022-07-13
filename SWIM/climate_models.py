@@ -53,7 +53,7 @@ def model_spectrum(model):
         
         # note Wavelength is in m, Irradiance is (W/m3)
         ROCKE_3D_solar_input = np.genfromtxt('sun', skip_header = 5, skip_footer = 1)
-        model_flux = ROCKE_3D_solar_input[:,1]*1e-3 # (mW/m3)
+        model_flux = ROCKE_3D_solar_input[:,1]*1e-6 # (mW/m2/nm)
         model_wavelength =  ROCKE_3D_solar_input[:,0]*1e9 # wavelength grid to nm
         starlabel = 'Sun' #label for plot
     
