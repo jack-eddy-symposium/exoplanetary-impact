@@ -5,7 +5,7 @@ import xarray as xr
 # function to plot a spectrum
 
 def plot_spectrum(wav1, flux1, wav2,  flux2, number = 1, 
-                  flux_units = '(erg/cm2/s/Ang)', label1 = '', label2 = '', ylog = True):
+                  flux_units = '(erg/cm2/s/Ang)', label1 = '', label2 = '', ylog = True, xlim = (1,1e5)):
 
     plt.figure(figsize = (12,5))
     
@@ -21,4 +21,5 @@ def plot_spectrum(wav1, flux1, wav2,  flux2, number = 1,
         plt.yscale('log')
     plt.ylabel('Flux Density '+flux_units, fontsize = 15)
     plt.legend(loc = 0, frameon = False, fontsize = 15)
+    plt.xlim(xlim)
     plt.show()
