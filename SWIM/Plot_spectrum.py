@@ -21,3 +21,4 @@ def plot_spectrum(wav1, flux1, wav2,  flux2, number = 1,
         plt.yscale('log')
     plt.ylabel('Flux Density '+flux_units, fontsize = 15)
     plt.legend(loc = 0, frameon = False, fontsize = 15)
+    plt.show()
