@@ -16,6 +16,8 @@ def model_spectrum(model):
 
     unavailable = False
     
+    flux_units = 'mW/m2/nm'
+    
     if (model == 'WACCM' or model == 'CAM'):
         solar_file = 'SolarForcingCMIP6piControl_c160921.nc'
         #check for file. Download if not in directory
@@ -31,18 +33,22 @@ def model_spectrum(model):
         model_flux = ssi.values #flux values
         model_wavelength = ssi.wavelength.values #wavelength grid
         starlabel = 'Sun' #label for plot
+        flux_units = 'mW/m2/nm'
     
     elif(model == 'ExoCAM'):
         print('ExoCam spectrum input file unknown')
         unavailable = True
+        flux_units = ''
     
     elif(model == 'UM'):
         print('UM spectrum input file unknown')
         unavailable = True
+        flux_units = ''
     
     elif(model == 'LMD-G'):
         print('LMD-G spectrum input file unknown')
         unavailable = True
+        flux_units = ''
     
     elif(model == 'ROCKE-3D'):
         #check for file. Download if not in directory
@@ -56,6 +62,8 @@ def model_spectrum(model):
         model_flux = ROCKE_3D_solar_input[:,1]*1e-6 # (mW/m2/nm)
         model_wavelength =  ROCKE_3D_solar_input[:,0]*1e9 # wavelength grid to nm
         starlabel = 'Sun' #label for plot
+        
+        flux_units = 'W/m3'
     
     elif(model == 'CCSM3'):
         print('CCSM3 spectrum input file unknown')
@@ -72,6 +80,7 @@ def model_spectrum(model):
         model_wavelength = ATMOS_gj667c_input[:,0]*0.1
         model_flux = ATMOS_gj667c_input[:,1]
         starlabel = 'GJ 667 C'
+        flux_units = ''
     
     else:
         print('Spectrum input file unknown')
@@ -81,4 +90,4 @@ def model_spectrum(model):
         model_wavelength = 0.0
         starlabel = 'n/a'
 
-    return model_flux, model_wavelength, starlabel
+    return model_flux, model_wavelength, starlabel, flux_units
