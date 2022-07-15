@@ -6,33 +6,36 @@ Irradiance_at_Earth = 1360000
 
 def rebin_rescale(Wavelength,
                   model_wavelength, 
-                  plot_Wavelength,
                   model, 
                   Scaled_flux_to_Earth,
                   starlabel,
-                  flux_recieved_relative_to_Earth,
-                  pl):
+                  pl, 
+                  planet_name):
+    
+    #find semi-major axis in AU
+    pl = pl.sort_values(by=['rowupdate'])
+    semi_major_axis = pl['pl_orbsmax'].iloc[-1]
+    print('semi-major axis of '+planet_name+' = '+str(semi_major_axis)+' AU')
+
+    #find solar luminosity relative to Sun
+    stellar_luminosity = 10**pl['st_lum'].iloc[-1]
+    print('Star has '+str(stellar_luminosity)+ ' times luminosity of Sun')
+
+    #find the flux recieved relative to Earth
+    flux_recieved_relative_to_Earth = stellar_luminosity/(semi_major_axis**2)
+    print(planet_name+' recieves '+str(flux_recieved_relative_to_Earth)+ \
+          ' times flux recieved by Earth\n')
     
     # get maximum and minimum wavelength regions
     min_wav = np.argmin(abs(Wavelength-model_wavelength[0]))
-    max_wav = np.argmin(abs(plot_Wavelength[-1]-model_wavelength))
+    max_wav = np.argmin(abs(Wavelength[-1]-model_wavelength))
 
-    TSI_spectra_muscles = trapz(Scaled_flux_to_Earth[min_wav:], Wavelength[min_wav:])
-    if (model == 'WACCM'):
-        print('Total stellar irradiance from Muscles spectra is: ' + \
-              str(round(TSI_spectra_muscles,2))+ ' mW/m^2/nm')
-    elif (model == 'ROCKE-3D'):
-        print('Total stellar irradiance from Muscles spectra is: ' + \
-              str(TSI_spectra_muscles)+ ' mW/m^3')
     new_wav_grid = model_wavelength[:max_wav]
-    New_grid_flux = sp.spectres(new_wav_grid, plot_Wavelength, Scaled_flux_to_Earth, spec_errs=None)
+    New_grid_flux = sp.spectres(new_wav_grid, Wavelength, Scaled_flux_to_Earth, spec_errs=None)
     TSI_spectra_model = trapz(New_grid_flux, new_wav_grid)
 
     print('Total stellar irradiance from ' + starlabel + ' spectra is: ' + \
           str(round(TSI_spectra_model,2))+ ' mW/m^2')
-
-    print('Ratio of MUSCLES spectra to  ' + starlabel + ' spectra is: ' + \
-          str(round(TSI_spectra_muscles/TSI_spectra_model,6)))
 
     # rescale to planet based on stellar luminoisty and semi-major axis from the NASA exoplanet archive
     Initial_scaled_flux = New_grid_flux * flux_recieved_relative_to_Earth
@@ -61,4 +64,4 @@ def rebin_rescale(Wavelength,
     final_scaling = flux_recieved_relative_to_Earth/(trapz(Flux, model_wavelength) / Irradiance_at_Earth)
     Final_scaled_flux = final_scaling*Flux
     Final_scaled_flux = Final_scaled_flux.clip(min=0) #removes negative values
-    return Final_scaled_flux
+    return Final_scaled_flux, flux_recieved_relative_to_Earth
