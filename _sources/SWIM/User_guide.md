@@ -41,7 +41,7 @@ This cell will download the wavelength and flux file needed for the target model
 
 Using the python library pandas, the notebook accessess the NASA exoplanet archive [https://exoplanetarchive.ipac.caltech.edu/](https://exoplanetarchive.ipac.caltech.edu/). the NASA exoplanet archive has several listings for each planet if there ate multiple observations. By default, the notebook selects the most recent update by sorting through the archive by when the row was last updated, and then selecting the fianl row:
 
-<i>#find semi-major axis in AU<\i><\i>
+<i>#find semi-major axis in AU<\i>
 
 <i>pl = pl.sort_values(by=['rowupdate'])<\i>
 
