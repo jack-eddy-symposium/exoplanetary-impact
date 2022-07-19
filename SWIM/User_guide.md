@@ -45,7 +45,7 @@ Using the python library pandas, the notebook accessess the NASA exoplanet archi
 
 pl = pl.sort_values(by=['rowupdate'])
 
-semi_major_axis = pl['pl_orbsmax'].iloc[-1]<\i>
+semi_major_axis = pl['pl_orbsmax'].iloc[-1]</i>
 
 If you would like a different selection, you may want to alter the code in Rebin_rescale_spectra.py.
 
