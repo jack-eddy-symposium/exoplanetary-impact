@@ -41,11 +41,11 @@ This cell will download the wavelength and flux file needed for the target model
 
 Using the python library pandas, the notebook accessess the NASA exoplanet archive [https://exoplanetarchive.ipac.caltech.edu/](https://exoplanetarchive.ipac.caltech.edu/). the NASA exoplanet archive has several listings for each planet if there ate multiple observations. By default, the notebook selects the most recent update by sorting through the archive by when the row was last updated, and then selecting the fianl row:
 
-<i>#find semi-major axis in AU<\i>
+<i>#find semi-major axis in AU
 
-<i>pl = pl.sort_values(by=['rowupdate'])<\i>
+pl = pl.sort_values(by=['rowupdate'])
 
-<i>semi_major_axis = pl['pl_orbsmax'].iloc[-1]<\i>
+semi_major_axis = pl['pl_orbsmax'].iloc[-1]<\i>
 
 If you would like a different selection, you may want to alter the code in Rebin_rescale_spectra.py.
 
