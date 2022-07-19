@@ -292,38 +292,38 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-5">
-     Cell 5:
+    <a class="reference internal nav-link" href="#cell-5-select-climate-model-for-output">
+     Cell 5: Select climate model for output
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-6">
-     Cell 6:
+    <a class="reference internal nav-link" href="#cell-6-assign-wavelength-grid-from-target-model">
+     Cell 6: Assign wavelength grid from target model
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-7">
-     Cell 7:
+    <a class="reference internal nav-link" href="#cell-7-access-the-exoplanet-archive-and-choose-exoplanet">
+     Cell 7: Access the Exoplanet Archive and choose exoplanet
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-8">
-     Cell 8:
+    <a class="reference internal nav-link" href="#cell-8-rebin-spectra-to-target-model-and-rescale-to-exoplanet-irradiance">
+     Cell 8: Rebin spectra to target model and rescale to exoplanet irradiance
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-9">
-     Cell 9:
+    <a class="reference internal nav-link" href="#cell-9-plot-scaled-spectra">
+     Cell 9: Plot scaled spectra
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-10">
-     Cell 10:
+    <a class="reference internal nav-link" href="#cell-11-save-spectrum-to-file">
+     Cell 11: Save spectrum to file
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-11">
-     Cell 11:
+    <a class="reference internal nav-link" href="#cell-12-clean-up-directory">
+     Cell 12: Clean up directory
     </a>
    </li>
   </ul>
@@ -378,38 +378,38 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-5">
-     Cell 5:
+    <a class="reference internal nav-link" href="#cell-5-select-climate-model-for-output">
+     Cell 5: Select climate model for output
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-6">
-     Cell 6:
+    <a class="reference internal nav-link" href="#cell-6-assign-wavelength-grid-from-target-model">
+     Cell 6: Assign wavelength grid from target model
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-7">
-     Cell 7:
+    <a class="reference internal nav-link" href="#cell-7-access-the-exoplanet-archive-and-choose-exoplanet">
+     Cell 7: Access the Exoplanet Archive and choose exoplanet
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-8">
-     Cell 8:
+    <a class="reference internal nav-link" href="#cell-8-rebin-spectra-to-target-model-and-rescale-to-exoplanet-irradiance">
+     Cell 8: Rebin spectra to target model and rescale to exoplanet irradiance
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-9">
-     Cell 9:
+    <a class="reference internal nav-link" href="#cell-9-plot-scaled-spectra">
+     Cell 9: Plot scaled spectra
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-10">
-     Cell 10:
+    <a class="reference internal nav-link" href="#cell-11-save-spectrum-to-file">
+     Cell 11: Save spectrum to file
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-11">
-     Cell 11:
+    <a class="reference internal nav-link" href="#cell-12-clean-up-directory">
+     Cell 12: Clean up directory
     </a>
    </li>
   </ul>
@@ -452,26 +452,38 @@ title="Print to PDF"
 <h3>Cell 4: Read in MUSCLES data and assign to arrays<a class="headerlink" href="#cell-4-read-in-muscles-data-and-assign-to-arrays" title="Permalink to this headline">#</a></h3>
 <p>This cell downloads and reads in the MUSCLES data. No options need to be selected.</p>
 </section>
-<section id="cell-5">
-<h3>Cell 5:<a class="headerlink" href="#cell-5" title="Permalink to this headline">#</a></h3>
+<section id="cell-5-select-climate-model-for-output">
+<h3>Cell 5: Select climate model for output<a class="headerlink" href="#cell-5-select-climate-model-for-output" title="Permalink to this headline">#</a></h3>
+<p>Run this cell and select the target model you would like to use. This will affect how the spectra will be rebinned and rescaled in order to be compatible with the model you have selected. If you do not see the model you would like to use, but you think SWIM would be useful for your model, please get in touch at pygjc&#64;leeds.ac.uk.</p>
 </section>
-<section id="cell-6">
-<h3>Cell 6:<a class="headerlink" href="#cell-6" title="Permalink to this headline">#</a></h3>
+<section id="cell-6-assign-wavelength-grid-from-target-model">
+<h3>Cell 6: Assign wavelength grid from target model<a class="headerlink" href="#cell-6-assign-wavelength-grid-from-target-model" title="Permalink to this headline">#</a></h3>
+<p>This cell will download the wavelength and flux file needed for the target model if it is not already downloaded. The file will be used later for rebinning and saving out the final spectra file. No options are required to be selected.</p>
 </section>
-<section id="cell-7">
-<h3>Cell 7:<a class="headerlink" href="#cell-7" title="Permalink to this headline">#</a></h3>
+<section id="cell-7-access-the-exoplanet-archive-and-choose-exoplanet">
+<h3>Cell 7: Access the Exoplanet Archive and choose exoplanet<a class="headerlink" href="#cell-7-access-the-exoplanet-archive-and-choose-exoplanet" title="Permalink to this headline">#</a></h3>
+<p>Using the python library pandas, the notebook accessess the NASA exoplanet archive <a class="reference external" href="https://exoplanetarchive.ipac.caltech.edu/">https://exoplanetarchive.ipac.caltech.edu/</a>. the NASA exoplanet archive has several listings for each planet if there ate multiple observations. By default, the notebook selects the most recent update by sorting through the archive by when the row was last updated, and then selecting the fianl row:</p>
+<p><i>#find semi-major axis in AU&lt;\i&gt;&lt;\i&gt;</p>
+<p><i>pl = pl.sort_values(by=[‘rowupdate’])&lt;\i&gt;</p>
+<p><i>semi_major_axis = pl[‘pl_orbsmax’].iloc[-1]&lt;\i&gt;</p>
+<p>If you would like a different selection, you may want to alter the code in Rebin_rescale_spectra.py.</p>
+<p>You should now have a list of planets that orbit the star you originally selected from the MUSCLES database. If you want to select a planet around a different star, but keep the same spectra, then set Spectra_name_same_as_host_name to <i>False</i></p>
 </section>
-<section id="cell-8">
-<h3>Cell 8:<a class="headerlink" href="#cell-8" title="Permalink to this headline">#</a></h3>
+<section id="cell-8-rebin-spectra-to-target-model-and-rescale-to-exoplanet-irradiance">
+<h3>Cell 8: Rebin spectra to target model and rescale to exoplanet irradiance<a class="headerlink" href="#cell-8-rebin-spectra-to-target-model-and-rescale-to-exoplanet-irradiance" title="Permalink to this headline">#</a></h3>
+<p>This cell rebins and rescales the spectra to the necessary irradiance at the chosen planet. The code for doing this is in Rebin_rescale_spectra.py.</p>
 </section>
-<section id="cell-9">
-<h3>Cell 9:<a class="headerlink" href="#cell-9" title="Permalink to this headline">#</a></h3>
+<section id="cell-9-plot-scaled-spectra">
+<h3>Cell 9: Plot scaled spectra<a class="headerlink" href="#cell-9-plot-scaled-spectra" title="Permalink to this headline">#</a></h3>
+<p>Running this cell will plot the spectrum next to the spectrum of the Sun for comparioson. Plot_spectrum.py contains the code for this. If you are happy that eveverything looks good, move onto the next cell to save a file of this spectrum for your chosen model.</p>
 </section>
-<section id="cell-10">
-<h3>Cell 10:<a class="headerlink" href="#cell-10" title="Permalink to this headline">#</a></h3>
+<section id="cell-11-save-spectrum-to-file">
+<h3>Cell 11: Save spectrum to file<a class="headerlink" href="#cell-11-save-spectrum-to-file" title="Permalink to this headline">#</a></h3>
+<p>This cell will write the new rescaled and rebinned spectrum to a file containing a wavelength grid with flux values. We plan to add in detailed metadata for each file that is saved out.</p>
 </section>
-<section id="cell-11">
-<h3>Cell 11:<a class="headerlink" href="#cell-11" title="Permalink to this headline">#</a></h3>
+<section id="cell-12-clean-up-directory">
+<h3>Cell 12: Clean up directory<a class="headerlink" href="#cell-12-clean-up-directory" title="Permalink to this headline">#</a></h3>
+<p>This cell cleans up the directory and removes any .fits files that were downloaded from the MUSCLES website. Do not run if you would like to view them.</p>
 <p><a class="reference external" href="http://creativecommons.org/licenses/by/4.0/"><img alt="CC BY 4.0" src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg" /></a></p>
 <p>This work is licensed under a
 <a class="reference external" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
