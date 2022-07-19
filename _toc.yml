@@ -1,10 +1,9 @@
 format: jb-book
 root: index
 parts:
-- caption: Data Processing
+- caption: SWIM code
   chapters:
-  - file: exoplanet-data-pull.ipynb
-  - file: Stellar_spectra_conversion.ipynb
+  - file: Stellar_Wind_and_Irradiance_Module.ipynb
 - caption: Workshop Activities
   chapters:
   - file: day1sum
