@@ -3,8 +3,4 @@ root: index
 parts:
 - caption: SWIM code
   chapters:
-  - file: Stellar_Wind_and_Irradiance_Module.ipynb
-- caption: Workshop Activities
-  chapters:
-  - file: day1sum
-  - file: day2sum
+  - file: SWIM/Stellar_Wind_and_Irradiance_Module.ipynb
