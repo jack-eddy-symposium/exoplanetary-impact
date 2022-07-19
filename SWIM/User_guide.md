@@ -23,7 +23,26 @@ For the data type selection, the final result should not depend too much on whet
 
 ### Cell 3: Select MUSCLES star
 
+The list of stars in the MUSCLES database is listed. Select which star you would like to download the spectra for. 
+
 ### Cell 4: Read in MUSCLES data and assign to arrays 
+
+This cell downloads and reads in the MUSCLES data. No options need to be selected.
+
+### Cell 5:
+
+### Cell 6:
+
+### Cell 7:
+
+### Cell 8:
+
+### Cell 9:
+
+### Cell 10:
+
+### Cell 11:
+
 
 
 [![CC BY 4.0][cc-by-shield]][cc-by]

@@ -3,4 +3,5 @@ root: index
 parts:
 - caption: SWIM code
   chapters:
+  - file: SWIM/User_guide.md
   - file: SWIM/Stellar_Wind_and_Irradiance_Module.ipynb
