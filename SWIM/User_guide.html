@@ -465,7 +465,7 @@ title="Print to PDF"
 <p>Using the python library pandas, the notebook accessess the NASA exoplanet archive <a class="reference external" href="https://exoplanetarchive.ipac.caltech.edu/">https://exoplanetarchive.ipac.caltech.edu/</a>. the NASA exoplanet archive has several listings for each planet if there ate multiple observations. By default, the notebook selects the most recent update by sorting through the archive by when the row was last updated, and then selecting the fianl row:</p>
 <p><i>#find semi-major axis in AU</p>
 <p>pl = pl.sort_values(by=[‘rowupdate’])</p>
-<p>semi_major_axis = pl[‘pl_orbsmax’].iloc[-1]&lt;\i&gt;</p>
+<p>semi_major_axis = pl[‘pl_orbsmax’].iloc[-1]</i></p>
 <p>If you would like a different selection, you may want to alter the code in Rebin_rescale_spectra.py.</p>
 <p>You should now have a list of planets that orbit the star you originally selected from the MUSCLES database. If you want to select a planet around a different star, but keep the same spectra, then set Spectra_name_same_as_host_name to <i>False</i></p>
 </section>
