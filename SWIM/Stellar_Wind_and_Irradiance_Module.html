@@ -1,0 +1,943 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>SWIM: Stellar Wind and Irradiance Module &#8212; (Exo)Planetary Atmosphere: the Impact of Stars and Solar Physics on Habitability and Life</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="(Exo)Planetary Atmosphere" href="../index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">(Exo)Planetary Atmosphere: the Impact of Stars and Solar Physics on Habitability and Life</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    (Exo)Planetary Atmosphere
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  SWIM code
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   SWIM: Stellar Wind and Irradiance Module
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/SWIM/Stellar_Wind_and_Irradiance_Module.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/SWIM/Stellar_Wind_and_Irradiance_Module.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#authors-and-contributers">
+   Authors and contributers:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#description">
+   Description:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#user-guide">
+   User Guide:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-do-list-community-input-required">
+   To do list (community input required)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-required-modules">
+   Import required modules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#program-options-begin-here">
+   Program options begin here
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-the-muscles-database">
+     Access the MUSCLES database
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#select-muscles-star">
+     Select MUSCLES star
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-in-muscles-data-and-assign-to-arrays">
+   Read in MUSCLES data and assign to arrays
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#select-climate-model-for-output">
+   Select climate model for output
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#access-the-exoplanet-archive-and-choose-exoplanet">
+   Access the Exoplanet Archive and choose exoplanet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rebin-spectra-to-target-model-and-rescale-to-exoplanet-irradiance">
+   Rebin spectra to target model and rescale to exoplanet irradiance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-scaled-stellar-spectra">
+   Plot scaled stellar spectra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-spectrum-to-file">
+   Save spectrum to file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clean-up-directory">
+   Clean up directory
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>SWIM: Stellar Wind and Irradiance Module</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#authors-and-contributers">
+   Authors and contributers:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#description">
+   Description:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#user-guide">
+   User Guide:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-do-list-community-input-required">
+   To do list (community input required)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-required-modules">
+   Import required modules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#program-options-begin-here">
+   Program options begin here
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-the-muscles-database">
+     Access the MUSCLES database
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#select-muscles-star">
+     Select MUSCLES star
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-in-muscles-data-and-assign-to-arrays">
+   Read in MUSCLES data and assign to arrays
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#select-climate-model-for-output">
+   Select climate model for output
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#access-the-exoplanet-archive-and-choose-exoplanet">
+   Access the Exoplanet Archive and choose exoplanet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rebin-spectra-to-target-model-and-rescale-to-exoplanet-irradiance">
+   Rebin spectra to target model and rescale to exoplanet irradiance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-scaled-stellar-spectra">
+   Plot scaled stellar spectra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-spectrum-to-file">
+   Save spectrum to file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clean-up-directory">
+   Clean up directory
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="swim-stellar-wind-and-irradiance-module">
+<h1>SWIM: Stellar Wind and Irradiance Module<a class="headerlink" href="#swim-stellar-wind-and-irradiance-module" title="Permalink to this headline">#</a></h1>
+<p>Created on June 6th 2022 &#64; 3rd Eddy Cross Disciplinary Symposium, Vail, CO, USA.
+Code based on original idea by Dan Marsh (NCAR, University of Leeds).</p>
+<section id="authors-and-contributers">
+<h2>Authors and contributers:<a class="headerlink" href="#authors-and-contributers" title="Permalink to this headline">#</a></h2>
+<p>Gregory Cooke (University of Leeds, pygjc&#64;leeds.ac.uk),
+Allison Youngblood (NASA Goddard),
+Caitlin Gough (University of Leeds),
+James Colliander (University of British Columbia),
+Fernando Pérez (University of California, Berkeley),
+Meng Jin (Lockheed Martin Solar &amp; Astrophysics Lab / SETI Institute),
+and Dan Marsh (NCAR, University of Leeds)</p>
+</section>
+<section id="description">
+<h2>Description:<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h2>
+<p>Code to read in files from the MUSCLES database and scale them to be used in various atmospheric models for different planets in those stellar systems.</p>
+</section>
+<section id="user-guide">
+<h2>User Guide:<a class="headerlink" href="#user-guide" title="Permalink to this headline">#</a></h2>
+<p>Run each cell until drop down menus appear.
+Select your desired options from dropdown menus.
+A file with wavelength and flux will be saved out.
+This is a .nc (netCDF file) for CAM/WACCM, for example.</p>
+</section>
+<section id="to-do-list-community-input-required">
+<h2>To do list (community input required)<a class="headerlink" href="#to-do-list-community-input-required" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Add in stellar wind models</p></li>
+<li><p>Add in protoplanetary disk models</p></li>
+<li><p>Add different climate model wavelength grids (only WACCM, ROCKE-3D, and custom grids so far)</p></li>
+<li><p>These wavelength grids are not known to us (we could not find them)</p></li>
+<li><p>Add in different ways to save the data (e.g. files such as .csv, .txt etc.) to be compatable with different models</p></li>
+</ul>
+</section>
+<section id="import-required-modules">
+<h2>Import required modules<a class="headerlink" href="#import-required-modules" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#imports</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interactive</span>
+<span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">trapz</span>
+<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+
+<span class="c1">#download spectres uncomment next line if spectres not installed</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;pip install spectres&#39;</span><span class="p">)</span>
+<span class="c1">#import spectres </span>
+<span class="kn">import</span> <span class="nn">spectres</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="c1"># SWIM functions</span>
+<span class="kn">from</span> <span class="nn">util</span> <span class="kn">import</span> <span class="n">download_data</span><span class="p">,</span> <span class="n">sub</span><span class="p">,</span> <span class="n">sup</span>
+<span class="kn">from</span> <span class="nn">climate_models</span> <span class="kn">import</span> <span class="n">model_spectrum</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="program-options-begin-here">
+<h2>Program options begin here<a class="headerlink" href="#program-options-begin-here" title="Permalink to this headline">#</a></h2>
+<section id="access-the-muscles-database">
+<h3>Access the MUSCLES database<a class="headerlink" href="#access-the-muscles-database" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># MUSCLES data type selection</span>
+
+<span class="c1"># dictionary relating data type to json file</span>
+<span class="c1"># json files contain the web address in the archive of each star</span>
+<span class="n">Data_Types</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Constant native resolution&#39;</span><span class="p">:</span> <span class="s1">&#39;json/stellar_names_const_adapt.json&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Variable native resolution&#39;</span><span class="p">:</span> <span class="s1">&#39;json/stellar_names_const_adapt.json&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Constant adaptive resolution&#39;</span><span class="p">:</span> <span class="s1">&#39;json/stellar_names_var_adapt.json&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Variable adaptive resolution&#39;</span><span class="p">:</span> <span class="s1">&#39;json/stellar_names_var_native.json&#39;</span><span class="p">}</span>
+
+<span class="c1"># create a drop down menu to select data type from MUSCLES files</span>
+<span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;initial&#39;</span><span class="p">}</span>
+<span class="n">data_type</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span> <span class="n">options</span><span class="o">=</span><span class="p">(</span><span class="n">Data_Types</span><span class="p">),</span>
+                             <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Data type selection&#39;</span><span class="p">,</span>
+                             <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span>
+                             <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">data_type</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "0b725980e98044b0b5dd2680457217ce", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</section>
+<section id="select-muscles-star">
+<h3>Select MUSCLES star<a class="headerlink" href="#select-muscles-star" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#reads in json file with MUSCLES archive list </span>
+
+<span class="n">json_file</span> <span class="o">=</span> <span class="n">data_type</span><span class="o">.</span><span class="n">value</span>
+<span class="n">stellar_names_and_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">json_file</span><span class="p">))</span>
+
+<span class="c1"># create a drop down menu to choose star in MUSCLES database</span>
+<span class="n">MUSCLES_files</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">(</span><span class="n">stellar_names_and_data</span><span class="p">),</span>
+                                 <span class="n">description</span><span class="o">=</span><span class="s1">&#39;MUSCLES stellar object:&#39;</span><span class="p">,</span>
+                                 <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span>
+                                 <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">MUSCLES_files</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "fa28446041874772b2e2022bb175a3cc", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</section>
+</section>
+<section id="read-in-muscles-data-and-assign-to-arrays">
+<h2>Read in MUSCLES data and assign to arrays<a class="headerlink" href="#read-in-muscles-data-and-assign-to-arrays" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#get star name</span>
+<span class="n">star_name</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">stellar_names_and_data</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">MUSCLES_files</span><span class="o">.</span><span class="n">value</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># downloade the stars fits file</span>
+<span class="n">fits_file</span> <span class="o">=</span> <span class="n">download_data</span><span class="p">(</span><span class="n">MUSCLES_files</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+<span class="c1"># read the starts spectrum</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fits_file</span><span class="p">)</span>
+<span class="n">spec</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">getdata</span><span class="p">(</span><span class="n">fits_file</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">#convert to mW/m2/nm</span>
+<span class="n">per_cm2_to_per_m2</span> <span class="o">=</span> <span class="mi">100</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">erg_per_s_to_mW</span> <span class="o">=</span> <span class="mf">1e-4</span>
+<span class="n">per_Ang_to_per_nm</span> <span class="o">=</span> <span class="mf">10.</span>
+
+<span class="n">New_flux</span> <span class="o">=</span> <span class="n">spec</span><span class="p">[</span><span class="s1">&#39;FLUX&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">erg_per_s_to_mW</span> <span class="o">*</span> <span class="n">per_cm2_to_per_m2</span> <span class="o">*</span> <span class="n">per_Ang_to_per_nm</span>
+
+<span class="c1"># may need to change for different models</span>
+<span class="n">Wavelength</span> <span class="o">=</span> <span class="n">spec</span><span class="p">[</span><span class="s1">&#39;WAVELENGTH&#39;</span><span class="p">]</span><span class="o">*</span><span class="mf">0.1</span>
+
+<span class="c1"># read in or create the output model grid and spectrum</span>
+<span class="n">Irradiance_at_Earth</span> <span class="o">=</span> <span class="mi">1360000</span> <span class="c1"># TSI? mW/m2? </span>
+<span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mf">1e5</span><span class="p">)</span> <span class="c1"># xlim for plots</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hlsp_muscles_multi_multi_gj1132_broadband_v23_adapt-const-res-sed.fits already downloaded
+./fits/hlsp_muscles_multi_multi_gj1132_broadband_v23_adapt-const-res-sed.fits
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="select-climate-model-for-output">
+<h2>Select climate model for output<a class="headerlink" href="#select-climate-model-for-output" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Other climate models can be included</span>
+<span class="c1"># Please email Greg Cooke at pygjc@leeds.ac.uk</span>
+
+<span class="n">Climate_model_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;None selected&#39;</span><span class="p">,</span><span class="s1">&#39;WACCM&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;CAM&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;ExoCam&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;UM&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;LMD-G&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;ROCKE-3D&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;CCSM3&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;Atmos&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;Custom constant grid&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;Custom variable grid&#39;</span>
+                     <span class="p">]</span>
+
+<span class="n">Climate_model_selection</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">Climate_model_list</span><span class="p">,</span>
+                                           <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Select climate model&#39;</span><span class="p">,</span>
+                                           <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">caption</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;Please select model&#39;</span><span class="p">)</span>
+<span class="n">Climate_model_selection</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">Climate_model_list</span><span class="p">,</span>
+                                           <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Select climate model&#39;</span><span class="p">,</span>
+                                           <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">dropdown_change</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">model</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Climate_model_selection</span><span class="o">.</span><span class="n">value</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Target model:&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+    
+<span class="n">Climate_model_selection</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">dropdown_change</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">display</span><span class="p">(</span><span class="n">caption</span><span class="p">,</span> <span class="n">Climate_model_selection</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "f60d55160e744867bed58c0dd0d33417", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "437a6ba393e044e1ace8befb4e064f62", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Target model: WACCM
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">model</span> <span class="o">==</span> <span class="s1">&#39;Custom constant grid&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please enter starting wavelength in nm&#39;</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please enter final wavelength in nm&#39;</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please enter wavelength binning in nm&#39;</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="n">model_wavelength</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+    
+<span class="k">elif</span><span class="p">(</span><span class="n">model</span> <span class="o">==</span> <span class="s1">&#39;Custom variable grid&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;NOTE: the current functionality is to read in a text &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;file of wavelength vs flux</span><span class="se">\n</span><span class="s1">using np.genfromtxt(filename).&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please enter the file name of the custom wavelength grid&#39;</span><span class="p">)</span>
+    <span class="c1">#get file name</span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+    <span class="c1">#get wavelength multiplier</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please enter the multiplier for the wavelength in order to convert to nm&#39;</span><span class="p">)</span>
+    <span class="n">multiplier</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+
+    <span class="n">Input_file</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="n">model_wavelength</span> <span class="o">=</span> <span class="n">Input_file</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">multiplier</span>
+    <span class="n">model_flux</span> <span class="o">=</span> <span class="n">Input_file</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">model_flux</span><span class="p">,</span> <span class="n">model_wavelength</span><span class="p">,</span> <span class="n">starlabel</span><span class="p">,</span> <span class="n">flux_units</span> <span class="o">=</span> <span class="n">model_spectrum</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    
+<span class="c1"># find total stellar irradiance from file</span>
+<span class="c1"># get total stellar irradiance at top of atmosphere</span>
+
+<span class="n">TSI_spectra</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span><span class="n">New_flux</span><span class="p">,</span> <span class="n">Wavelength</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total stellar irradiance from original file relative to the Sun: &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">TSI_spectra</span><span class="o">/</span><span class="n">Irradiance_at_Earth</span><span class="p">))</span>
+
+<span class="c1"># scale TSI</span>
+<span class="n">Scaled_flux_to_Earth</span> <span class="o">=</span> <span class="n">New_flux</span><span class="o">/</span><span class="p">(</span><span class="n">TSI_spectra</span><span class="o">/</span><span class="n">Irradiance_at_Earth</span><span class="p">)</span>
+<span class="n">TSI_spectra</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span><span class="n">Scaled_flux_to_Earth</span><span class="p">,</span> <span class="n">Wavelength</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Scaled total stellar irradiance relative to the Sun: &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">TSI_spectra</span><span class="o">/</span><span class="n">Irradiance_at_Earth</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File already downloaded
+Total stellar irradiance from original file relative to the Sun: 6.949514515971132e-16
+Scaled total stellar irradiance relative to the Sun: 1.0000000000000004
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="access-the-exoplanet-archive-and-choose-exoplanet">
+<h2>Access the Exoplanet Archive and choose exoplanet<a class="headerlink" href="#access-the-exoplanet-archive-and-choose-exoplanet" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read in only the following rows from the NASA exoplanet archive:</span>
+<span class="c1"># pl_name, hostname, st_lum, pl_orbsmax, st_teff, rowupdate</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://exoplanetarchive.ipac.caltech.edu/TAP/sync&#39;</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;?query=select+pl_name,hostname,st_lum,pl_orbsmax,st_teff,rowupdate+from+ps&amp;format=csv&#39;</span>
+<span class="n">NASA_Exo_Archive</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="o">+</span><span class="n">query</span><span class="p">)</span>
+
+<span class="c1"># set Spectra_name_same_as_host_name = False if looking at exoplanets around a different </span>
+<span class="c1"># star to the ones in the MUSCLES database, i.e., if you want spectra for an M8 star but </span>
+<span class="c1"># the closest spectra availiable is TRAPPIST-1 otherwise in this example you will only be</span>
+<span class="c1"># able to select TRAPPIST-1 planets if Spectra_name_same_as_host_name = True</span>
+
+<span class="n">Spectra_name_same_as_host_name</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1">#Find planets based on host name</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">Spectra_name_same_as_host_name</span><span class="p">):</span>
+    <span class="c1">#choose planet</span>
+    <span class="n">planets</span> <span class="o">=</span> <span class="n">NASA_Exo_Archive</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">NASA_Exo_Archive</span><span class="p">[</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">star_name</span><span class="p">][</span><span class="s1">&#39;pl_name&#39;</span><span class="p">]</span>
+    <span class="n">Find_planets</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">planets</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(),</span>
+                                    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Find planets&#39;</span><span class="p">,</span>
+                                    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Find_planets</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">Find_host</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">(</span><span class="n">NASA_Exo_Archive</span><span class="p">[</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()),</span>
+                                 <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Find host&#39;</span><span class="p">,</span>
+                                 <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Find_host</span><span class="p">)</span>
+    
+    <span class="c1">#choose planet</span>
+    <span class="n">planets</span> <span class="o">=</span> <span class="n">NASA_Exo_Archive</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">NASA_Exo_Archive</span><span class="p">[</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">Find_host</span><span class="o">.</span><span class="n">value</span><span class="p">][</span><span class="s1">&#39;pl_name&#39;</span><span class="p">]</span>
+    <span class="n">Find_planets</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">planets</span><span class="p">,</span>
+                                    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Find planets&#39;</span><span class="p">,</span>
+                                    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Find_planets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "827bfa624de64363b9a70ec41ecfd5ee", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</section>
+<section id="rebin-spectra-to-target-model-and-rescale-to-exoplanet-irradiance">
+<h2>Rebin spectra to target model and rescale to exoplanet irradiance<a class="headerlink" href="#rebin-spectra-to-target-model-and-rescale-to-exoplanet-irradiance" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># drop nan rows for luminosity and orbital period</span>
+<span class="n">planet_name</span> <span class="o">=</span> <span class="n">Find_planets</span><span class="o">.</span><span class="n">value</span>
+<span class="n">pl</span> <span class="o">=</span> <span class="n">NASA_Exo_Archive</span><span class="o">.</span>\
+    <span class="n">loc</span><span class="p">[</span><span class="n">NASA_Exo_Archive</span><span class="p">[</span><span class="s1">&#39;pl_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">planet_name</span><span class="p">]</span><span class="o">.</span>\
+    <span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;st_lum&#39;</span><span class="p">,</span><span class="s1">&#39;pl_orbsmax&#39;</span><span class="p">])</span>
+
+<span class="c1">#rebin and perform final rescaling</span>
+<span class="kn">from</span> <span class="nn">Rebin_rescale_spectra</span> <span class="kn">import</span> <span class="n">rebin_rescale</span>
+<span class="n">Final_scaled_flux</span><span class="p">,</span> <span class="n">flux_relative_to_Earth</span> <span class="o">=</span> <span class="n">rebin_rescale</span><span class="p">(</span><span class="n">Wavelength</span> <span class="o">=</span> <span class="n">Wavelength</span><span class="p">,</span>
+                                                          <span class="n">model_wavelength</span> <span class="o">=</span> <span class="n">model_wavelength</span><span class="p">,</span> 
+                                                          <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="p">,</span> 
+                                                          <span class="n">Scaled_flux_to_Earth</span> <span class="o">=</span> <span class="n">Scaled_flux_to_Earth</span><span class="p">,</span>
+                                                          <span class="n">starlabel</span> <span class="o">=</span> <span class="n">starlabel</span><span class="p">,</span> <span class="n">pl</span> <span class="o">=</span> <span class="n">pl</span><span class="p">,</span>
+                                                          <span class="n">planet_name</span> <span class="o">=</span> <span class="n">planet_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>semi-major axis of GJ 1132 b = 0.0153 AU
+Star has 0.004375221051582521 times luminosity of Sun
+GJ 1132 b recieves 18.690337270205994 times flux recieved by Earth
+
+Total stellar irradiance from Sun spectra is: 1359943.3 mW/m^2
+Scaled total stellar irradiance relative to the Sun: 18.68955800576663
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-scaled-stellar-spectra">
+<h2>Plot scaled stellar spectra<a class="headerlink" href="#plot-scaled-stellar-spectra" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Scaled MUSCLES spectra of</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">+</span><span class="n">star_name</span><span class="o">+</span> <span class="s1">&#39; at &#39;</span> <span class="o">+</span>\
+         <span class="n">Find_planets</span><span class="o">.</span><span class="n">value</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">(&#39;</span> <span class="o">+</span>\
+         <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">flux_relative_to_Earth</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$F_\oplus$&#39;</span><span class="o">+</span><span class="s1">&#39;)&#39;</span>
+
+<span class="kn">from</span> <span class="nn">Plot_spectrum</span> <span class="kn">import</span> <span class="n">plot_spectrum</span>
+<span class="n">plot_spectrum</span><span class="p">(</span><span class="n">wav1</span> <span class="o">=</span> <span class="n">model_wavelength</span><span class="p">,</span> <span class="n">flux1</span> <span class="o">=</span> <span class="n">Final_scaled_flux</span><span class="p">,</span> <span class="n">wav2</span> <span class="o">=</span> <span class="n">model_wavelength</span><span class="p">,</span> <span class="n">flux2</span> <span class="o">=</span> <span class="n">model_flux</span><span class="p">,</span> 
+              <span class="n">number</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">flux_units</span> <span class="o">=</span> <span class="n">flux_units</span><span class="p">,</span>
+              <span class="n">label1</span> <span class="o">=</span> <span class="n">label</span><span class="p">,</span> <span class="n">label2</span> <span class="o">=</span> <span class="n">starlabel</span><span class="o">+</span><span class="s1">&#39; scaled to Earth&#39;</span><span class="p">,</span> <span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mf">1e5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Stellar_Wind_and_Irradiance_Module_17_0.png" src="../_images/Stellar_Wind_and_Irradiance_Module_17_0.png" />
+</div>
+</div>
+</section>
+<section id="save-spectrum-to-file">
+<h2>Save spectrum to file<a class="headerlink" href="#save-spectrum-to-file" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#now write out the files to the working directory</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">model</span> <span class="o">==</span> <span class="s1">&#39;WACCM&#39;</span> <span class="ow">or</span> <span class="n">model</span> <span class="o">==</span> <span class="s1">&#39;CAM&#39;</span><span class="p">):</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;SolarForcingCMIP6piControl_c160921.nc&#39;</span><span class="p">)</span>
+    <span class="n">ds</span><span class="o">.</span><span class="n">ssi</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">Final_scaled_flux</span><span class="p">;</span> <span class="n">ds</span><span class="o">.</span><span class="n">ssi</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Final_scaled_flux</span>
+    <span class="n">NewFile</span> <span class="o">=</span> <span class="s1">&#39;TOA_Flux_at_&#39;</span><span class="o">+</span><span class="n">Find_planets</span><span class="o">.</span><span class="n">value</span><span class="o">+</span><span class="s1">&#39;_for_&#39;</span><span class="o">+</span><span class="n">Climate_model_selection</span><span class="o">.</span><span class="n">value</span><span class="o">+</span><span class="s1">&#39;.nc&#39;</span>
+    <span class="n">NewFile</span> <span class="o">=</span> <span class="n">NewFile</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+    <span class="n">ds</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="s1">&#39;./output/&#39;</span><span class="o">+</span><span class="n">NewFile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;File saved&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">model</span> <span class="o">==</span> <span class="s1">&#39;ROCKE-3D&#39;</span><span class="p">):</span>
+    <span class="c1"># does ROCKE-3D need to be scaled back to W/m2/m and grid on m?</span>
+    <span class="c1"># clearly negative fluxes mean something is wrong here!</span>
+    <span class="n">NewFile</span> <span class="o">=</span> <span class="s1">&#39;TOA_Flux_at_&#39;</span><span class="o">+</span><span class="n">Find_planets</span><span class="o">.</span><span class="n">value</span><span class="o">+</span><span class="s1">&#39;_for_&#39;</span><span class="o">+</span><span class="n">Climate_model_selection</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">NewFile</span> <span class="o">=</span> <span class="n">NewFile</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Wavelength [m]&#39;</span><span class="p">:</span> <span class="n">model_wavelength</span><span class="p">,</span> <span class="s1">&#39;Flux [W/m^3]&#39;</span><span class="p">:</span>  <span class="n">Final_scaled_flux</span><span class="p">})</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;./output/&#39;</span><span class="o">+</span><span class="n">NewFile</span><span class="o">+</span><span class="s1">&#39;.txt&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;File saved&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">model</span> <span class="o">==</span> <span class="s1">&#39;Atmos&#39;</span><span class="p">):</span>
+    <span class="n">NewFile</span> <span class="o">=</span> <span class="s1">&#39;TOA_Flux_at_&#39;</span><span class="o">+</span><span class="n">Find_planets</span><span class="o">.</span><span class="n">value</span><span class="o">+</span><span class="s1">&#39;_for_&#39;</span><span class="o">+</span><span class="n">Climate_model_selection</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">NewFile</span> <span class="o">=</span> <span class="n">NewFile</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Wavelength [m]&#39;</span><span class="p">:</span> <span class="n">model_wavelength</span><span class="p">,</span> <span class="s1">&#39;Flux [W/m^3]&#39;</span><span class="p">:</span>  <span class="n">Final_scaled_flux</span><span class="p">})</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;./output/&#39;</span><span class="o">+</span><span class="n">NewFile</span><span class="o">+</span><span class="s1">&#39;.txt&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;File saved&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;File not saved&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File saved
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="clean-up-directory">
+<h2>Clean up directory<a class="headerlink" href="#clean-up-directory" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># clean up</span>
+<span class="c1"># remove MUSCLES files in current directory</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;rm fits/*muscles*.fits&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./SWIM"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">(Exo)Planetary Atmosphere</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Greg Cooke, Dan Marsh. Book originally made by Fernando Pérez.<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
