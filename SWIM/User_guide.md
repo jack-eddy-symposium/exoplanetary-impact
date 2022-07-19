@@ -29,19 +29,44 @@ The list of stars in the MUSCLES database is listed. Select which star you would
 
 This cell downloads and reads in the MUSCLES data. No options need to be selected.
 
-### Cell 5:
+### Cell 5: Select climate model for output
 
-### Cell 6:
+Run this cell and select the target model you would like to use. This will affect how the spectra will be rebinned and rescaled in order to be compatible with the model you have selected. If you do not see the model you would like to use, but you think SWIM would be useful for your model, please get in touch at pygjc@leeds.ac.uk.
 
-### Cell 7:
+### Cell 6: Assign wavelength grid from target model
 
-### Cell 8:
+This cell will download the wavelength and flux file needed for the target model if it is not already downloaded. The file will be used later for rebinning and saving out the final spectra file. No options are required to be selected.
 
-### Cell 9:
+### Cell 7: Access the Exoplanet Archive and choose exoplanet
 
-### Cell 10:
+Using the python library pandas, the notebook accessess the NASA exoplanet archive [https://exoplanetarchive.ipac.caltech.edu/](https://exoplanetarchive.ipac.caltech.edu/). the NASA exoplanet archive has several listings for each planet if there ate multiple observations. By default, the notebook selects the most recent update by sorting through the archive by when the row was last updated, and then selecting the fianl row:
 
-### Cell 11:
+<i>#find semi-major axis in AU<\i><\i>
+
+<i>pl = pl.sort_values(by=['rowupdate'])<\i>
+
+<i>semi_major_axis = pl['pl_orbsmax'].iloc[-1]<\i>
+
+If you would like a different selection, you may want to alter the code in Rebin_rescale_spectra.py.
+
+You should now have a list of planets that orbit the star you originally selected from the MUSCLES database. If you want to select a planet around a different star, but keep the same spectra, then set Spectra_name_same_as_host_name to <i>False</i>
+
+### Cell 8: Rebin spectra to target model and rescale to exoplanet irradiance
+
+This cell rebins and rescales the spectra to the necessary irradiance at the chosen planet. The code for doing this is in Rebin_rescale_spectra.py.
+
+
+### Cell 9: Plot scaled spectra
+
+Running this cell will plot the spectrum next to the spectrum of the Sun for comparioson. Plot_spectrum.py contains the code for this. If you are happy that eveverything looks good, move onto the next cell to save a file of this spectrum for your chosen model.
+
+### Cell 11: Save spectrum to file
+
+This cell will write the new rescaled and rebinned spectrum to a file containing a wavelength grid with flux values. We plan to add in detailed metadata for each file that is saved out.
+
+### Cell 12: Clean up directory
+
+This cell cleans up the directory and removes any .fits files that were downloaded from the MUSCLES website. Do not run if you would like to view them.
 
 
 
