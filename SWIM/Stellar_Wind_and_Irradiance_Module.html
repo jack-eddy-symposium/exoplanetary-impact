@@ -523,13 +523,35 @@ This is a .nc (netCDF file) for CAM/WACCM, for example.</p>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">trapz</span>
 <span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
-
-<span class="c1">#download spectres uncomment next line if spectres not installed</span>
-<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;pip install spectres&#39;</span><span class="p">)</span>
-<span class="c1">#import spectres </span>
-<span class="kn">import</span> <span class="nn">spectres</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="c1"># SWIM functions</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import spectres - will install on first use</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">spectres</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;installing...&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;pip install spectres&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+    <span class="kn">import</span> <span class="nn">spectres</span> <span class="k">as</span> <span class="nn">sp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No module named &#39;spectres&#39;
+installing...
+done
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SWIM functions</span>
 <span class="kn">from</span> <span class="nn">util</span> <span class="kn">import</span> <span class="n">download_data</span><span class="p">,</span> <span class="n">sub</span><span class="p">,</span> <span class="n">sup</span>
 <span class="kn">from</span> <span class="nn">climate_models</span> <span class="kn">import</span> <span class="n">model_spectrum</span>
 </pre></div>
@@ -563,10 +585,6 @@ This is a .nc (netCDF file) for CAM/WACCM, for example.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "b28af1d2e3f64f9f8399ff176f0cb0f6", "version_major": 2, "version_minor": 0}
-</script></div>
 </div>
 </section>
 <section id="select-muscles-star">
@@ -588,10 +606,6 @@ This is a .nc (netCDF file) for CAM/WACCM, for example.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ae844b9bc8744bc091ccb1c7a4124d67", "version_major": 2, "version_minor": 0}
-</script></div>
 </div>
 </section>
 </section>
@@ -621,14 +635,6 @@ This is a .nc (netCDF file) for CAM/WACCM, for example.</p>
 
 <span class="c1"># read in or create the output model grid and spectrum</span>
 <span class="n">Irradiance_at_Earth</span> <span class="o">=</span> <span class="mi">1360000</span> <span class="c1"># mW/m2 </span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data...
- hlsp_muscles_multi_multi_trappist-1_broadband_v23_adapt-const-res-sed.fits
-wget https://archive.stsci.edu/missions/hlsp/muscles/trappist-1/hlsp_muscles_multi_multi_trappist-1_broadband_v23_adapt-const-res-sed.fits; mv hlsp_muscles_multi_multi_trappist-1_broadband_v23_adapt-const-res-sed.fits ./fits
-./fits/hlsp_muscles_multi_multi_trappist-1_broadband_v23_adapt-const-res-sed.fits
 </pre></div>
 </div>
 </div>
@@ -671,15 +677,6 @@ wget https://archive.stsci.edu/missions/hlsp/muscles/trappist-1/hlsp_muscles_mul
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "7772472347c24f9e99ef0896c104784d", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "8c0eb92ab12d4b0188047035af1fb1b7", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Target model: WACCM
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -719,13 +716,6 @@ wget https://archive.stsci.edu/missions/hlsp/muscles/trappist-1/hlsp_muscles_mul
 <span class="n">Scaled_flux_to_Earth</span> <span class="o">=</span> <span class="n">New_flux</span><span class="o">/</span><span class="p">(</span><span class="n">TSI_spectra</span><span class="o">/</span><span class="n">Irradiance_at_Earth</span><span class="p">)</span>
 <span class="n">TSI_spectra</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span><span class="n">Scaled_flux_to_Earth</span><span class="p">,</span> <span class="n">Wavelength</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Scaled total stellar irradiance relative to the Sun: &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">TSI_spectra</span><span class="o">/</span><span class="n">Irradiance_at_Earth</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File already downloaded
-Total stellar irradiance from original file relative to the Sun: 8.605194006526422e-17
-Scaled total stellar irradiance relative to the Sun: 1.0
 </pre></div>
 </div>
 </div>
@@ -772,10 +762,6 @@ Scaled total stellar irradiance relative to the Sun: 1.0
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "7fe55133a6454541b9f870f123c80a99", "version_major": 2, "version_minor": 0}
-</script></div>
 </div>
 </section>
 <section id="rebin-spectra-to-target-model-and-rescale-to-exoplanet-irradiance">
@@ -799,16 +785,6 @@ Scaled total stellar irradiance relative to the Sun: 1.0
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>semi-major axis of TRAPPIST-1 b = 0.01154 AU
-Star has 0.0005533501092157371 times luminosity of Sun
-TRAPPIST-1 b recieves 4.155166035519113 times flux recieved by Earth
-
-Total stellar irradiance from Sun spectra is: 1359749.74 mW/m^2
-Scaled total stellar irradiance relative to the Sun: 4.154401411742482
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="plot-scaled-stellar-spectra">
@@ -825,9 +801,6 @@ Scaled total stellar irradiance relative to the Sun: 4.154401411742482
               <span class="n">label1</span> <span class="o">=</span> <span class="n">label</span><span class="p">,</span> <span class="n">label2</span> <span class="o">=</span> <span class="n">starlabel</span><span class="o">+</span><span class="s1">&#39; scaled to Earth&#39;</span><span class="p">,</span> <span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mf">1e5</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/Stellar_Wind_and_Irradiance_Module_17_0.png" src="../_images/Stellar_Wind_and_Irradiance_Module_17_0.png" />
 </div>
 </div>
 </section>
@@ -861,11 +834,6 @@ Scaled total stellar irradiance relative to the Sun: 4.154401411742482
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File saved
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="clean-up-directory">
@@ -875,11 +843,6 @@ Scaled total stellar irradiance relative to the Sun: 4.154401411742482
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># clean up</span>
 <span class="c1"># remove MUSCLES files in current directory</span>
 <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;rm fits/*muscles*.fits&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
 </div>
@@ -896,16 +859,16 @@ Scaled total stellar irradiance relative to the Sun: 4.154401411742482
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-env-miniconda3-default-py"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "conda-env-miniconda3-default-py",
             path: "./SWIM"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-env-miniconda3-default-py'</script>
 
               </div>
               
