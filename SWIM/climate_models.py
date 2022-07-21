@@ -40,17 +40,12 @@ def model_spectrum(model):
         unavailable = True
         flux_units = ''
     
-    elif(model == 'UM'):
-        print('UM spectrum input file unknown')
-        unavailable = True
-        flux_units = ''
-    
     elif(model == 'LMD-G'):
         print('LMD-G spectrum input file unknown')
         unavailable = True
         flux_units = ''
     
-    elif(model == 'ROCKE-3D'):
+    elif(model == 'ROCKE-3D' or model == 'UM'):
         #check for file. Download if not in directory
         if(os.path.isfile('sun')): 
             print('File already downloaded')
