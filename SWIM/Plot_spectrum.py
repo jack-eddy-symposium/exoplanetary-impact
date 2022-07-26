@@ -8,7 +8,7 @@ import xarray as xr
 # ylog = True sets yscale to a log scale
 
 def plot_spectrum(wav1, flux1, wav2, flux2, number = 1, 
-                  flux_units = '(erg/cm2/s/Ang)', label1 = '', label2 = '', ylog = True, xlim = (1,1e5)):
+                  flux_units = '(erg/cm2/s/Ang)', label1 = '', label2 = '', ylog = True, xlim = (1,1e5), wav_units = 'nm'):
 
     plt.figure(figsize = (12,5))
     
@@ -18,7 +18,7 @@ def plot_spectrum(wav1, flux1, wav2, flux2, number = 1,
         plt.plot(wav1, flux1, color = 'k', label = label1)
         plt.plot(wav2, flux2, color = 'b', label = label2)
     plt.tick_params(labelsize = 15, width = 2, length = 4, right = True, top = True)
-    plt.xlabel('Wavelength [nm]', fontsize = 15)
+    plt.xlabel('Wavelength ' + '[' + wav_units + ']', fontsize = 15)
     plt.xscale('log')
     if (ylog == True):
         plt.yscale('log')

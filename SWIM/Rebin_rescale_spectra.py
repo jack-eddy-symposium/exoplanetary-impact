@@ -10,7 +10,8 @@ def rebin_rescale(Wavelength,
                   Scaled_flux_to_Earth,
                   starlabel,
                   pl, 
-                  planet_name):
+                  planet_name, 
+                  flux_units):
     
     #find semi-major axis in AU
     pl = pl.sort_values(by=['rowupdate'])
@@ -35,7 +36,7 @@ def rebin_rescale(Wavelength,
     TSI_spectra_model = trapz(New_grid_flux, new_wav_grid)
 
     print('Total stellar irradiance from ' + starlabel + ' spectra is: ' + \
-          str(round(TSI_spectra_model,2))+ ' mW/m^2')
+          str(round(TSI_spectra_model,2))+ ' ' + flux_units)
 
     # rescale to planet based on stellar luminoisty and semi-major axis from the NASA exoplanet archive
     Initial_scaled_flux = New_grid_flux * flux_recieved_relative_to_Earth
