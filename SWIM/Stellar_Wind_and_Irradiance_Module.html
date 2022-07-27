@@ -568,7 +568,7 @@ This is a .nc (netCDF file) for CAM/WACCM, for example.</p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "0b725980e98044b0b5dd2680457217ce", "version_major": 2, "version_minor": 0}
+{"model_id": "218b44e7719d4243b74675cfc646bf39", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 </section>
@@ -593,7 +593,7 @@ This is a .nc (netCDF file) for CAM/WACCM, for example.</p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "fa28446041874772b2e2022bb175a3cc", "version_major": 2, "version_minor": 0}
+{"model_id": "f47a13ce0d9345dc9011bdaa736cf148", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 </section>
@@ -674,10 +674,10 @@ This is a .nc (netCDF file) for CAM/WACCM, for example.</p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "f60d55160e744867bed58c0dd0d33417", "version_major": 2, "version_minor": 0}
+{"model_id": "08e8db911fcd40e498748bc77f037d23", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "437a6ba393e044e1ace8befb4e064f62", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Target model: WACCM
+{"model_id": "7757d1b2d15f4a31ba31dee49da5b399", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Target model: ROCKE-3D
 </pre></div>
 </div>
 </div>
@@ -775,7 +775,7 @@ Scaled total stellar irradiance relative to the Sun: 1.0000000000000004
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "827bfa624de64363b9a70ec41ecfd5ee", "version_major": 2, "version_minor": 0}
+{"model_id": "ed106bd171d740b38e22abb0d9632954", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 </section>
@@ -796,7 +796,7 @@ Scaled total stellar irradiance relative to the Sun: 1.0000000000000004
                                                           <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="p">,</span> 
                                                           <span class="n">Scaled_flux_to_Earth</span> <span class="o">=</span> <span class="n">Scaled_flux_to_Earth</span><span class="p">,</span>
                                                           <span class="n">starlabel</span> <span class="o">=</span> <span class="n">starlabel</span><span class="p">,</span> <span class="n">pl</span> <span class="o">=</span> <span class="n">pl</span><span class="p">,</span>
-                                                          <span class="n">planet_name</span> <span class="o">=</span> <span class="n">planet_name</span><span class="p">)</span>
+                                                          <span class="n">planet_name</span> <span class="o">=</span> <span class="n">planet_name</span><span class="p">,</span> <span class="n">flux_units</span> <span class="o">=</span> <span class="n">flux_units</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -805,8 +805,8 @@ Scaled total stellar irradiance relative to the Sun: 1.0000000000000004
 Star has 0.004375221051582521 times luminosity of Sun
 GJ 1132 b recieves 18.690337270205994 times flux recieved by Earth
 
-Total stellar irradiance from Sun spectra is: 1359943.3 mW/m^2
-Scaled total stellar irradiance relative to the Sun: 18.68955800576663
+Total stellar irradiance from Sun spectra is: 1359915.06 W/m3
+Scaled total stellar irradiance relative to the Sun: 18.689169890441473
 </pre></div>
 </div>
 </div>
@@ -822,11 +822,12 @@ Scaled total stellar irradiance relative to the Sun: 18.68955800576663
 
 <span class="n">Output_flux</span> <span class="o">=</span> <span class="n">Final_scaled_flux</span><span class="o">/</span><span class="n">flux_scaling</span>
 <span class="n">Output_wavelength</span> <span class="o">=</span> <span class="n">model_wavelength</span><span class="o">/</span><span class="n">wav_scaling</span>
+<span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="o">/</span><span class="n">wav_scaling</span><span class="p">,</span><span class="mf">1e5</span><span class="o">/</span><span class="n">wav_scaling</span><span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">Plot_spectrum</span> <span class="kn">import</span> <span class="n">plot_spectrum</span>
 <span class="n">plot_spectrum</span><span class="p">(</span><span class="n">wav1</span> <span class="o">=</span> <span class="n">Output_wavelength</span><span class="p">,</span> <span class="n">flux1</span> <span class="o">=</span> <span class="n">Output_flux</span><span class="p">,</span> <span class="n">wav2</span> <span class="o">=</span> <span class="n">Output_wavelength</span><span class="p">,</span> <span class="n">flux2</span> <span class="o">=</span> <span class="n">model_flux</span><span class="o">/</span><span class="n">flux_scaling</span><span class="p">,</span> 
               <span class="n">number</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">flux_units</span> <span class="o">=</span> <span class="n">flux_units</span><span class="p">,</span>
-              <span class="n">label1</span> <span class="o">=</span> <span class="n">label</span><span class="p">,</span> <span class="n">label2</span> <span class="o">=</span> <span class="n">starlabel</span><span class="o">+</span><span class="s1">&#39; scaled to Earth&#39;</span><span class="p">,</span> <span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mf">1e5</span><span class="p">))</span>
+              <span class="n">label1</span> <span class="o">=</span> <span class="n">label</span><span class="p">,</span> <span class="n">label2</span> <span class="o">=</span> <span class="n">starlabel</span><span class="o">+</span><span class="s1">&#39; scaled to Earth&#39;</span><span class="p">,</span> <span class="n">xlim</span> <span class="o">=</span> <span class="n">xlim</span><span class="p">,</span> <span class="n">wav_units</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
