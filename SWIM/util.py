@@ -24,10 +24,11 @@ def download_data(url, data_dir="./fits"):
     else:
         print("\nDownloading data...\n", data_file)
         try:
-            cmd = 'wget '+url+'; mv '+data_file+' '+data_dir
+            cmd = 'curl -O '+url+'; mv '+data_file+' '+data_dir
             os.system(cmd)
+            
         except:
-            cmd = 'curl -O'+url+'; mv '+data_file+' '+data_dir
+            cmd = 'wget '+url+'; mv '+data_file+' '+data_dir
             os.system(cmd)
         print(cmd)
         
