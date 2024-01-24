@@ -453,7 +453,7 @@ Requirement already satisfied: numpy in /Users/gregcooke/anaconda3/lib/python3.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "93d8d1c1be7940c9871750f58abfb829", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "2ed27af3f8b54320b073f15a7cc4ad42", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="select-muscles-star">
@@ -476,7 +476,7 @@ Requirement already satisfied: numpy in /Users/gregcooke/anaconda3/lib/python3.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "75399b05f82c4bd1bdc519035ff1203f", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "208dc0cff75a4942a4f900424a92d76c", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 </section>
@@ -511,113 +511,8 @@ Requirement already satisfied: numpy in /Users/gregcooke/anaconda3/lib/python3.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data...
- hlsp_muscles_multi_multi_gj176_broadband_v22_adapt-const-res-sed.fits
-wget https://archive.stsci.edu/missions/hlsp/muscles/gj176/hlsp_muscles_multi_multi_gj176_broadband_v22_adapt-const-res-sed.fits; mv hlsp_muscles_multi_multi_gj176_broadband_v22_adapt-const-res-sed.fits ./fits
-./fits/hlsp_muscles_multi_multi_gj176_broadband_v22_adapt-const-res-sed.fits
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sh: wget: command not found
-mv: rename hlsp_muscles_multi_multi_gj176_broadband_v22_adapt-const-res-sed.fits to ./fits/hlsp_muscles_multi_multi_gj176_broadband_v22_adapt-const-res-sed.fits: No such file or directory
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># read the starts spectrum</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">fits_file</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">spec</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">getdata</span><span class="p">(</span><span class="n">fits_file</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1">#convert to mW/m2/nm</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">per_cm2_to_per_m2</span> <span class="o">=</span> <span class="mi">100</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/astropy/io/fits/convenience.py:220,</span> in <span class="ni">getdata</span><span class="nt">(filename, header, lower, upper, view, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">215</span> <span class="n">extver</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;extver&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span> <span class="n">ext_given</span> <span class="o">=</span> <span class="ow">not</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">ext</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">extname</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">extver</span> <span class="ow">is</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">218</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">220</span> <span class="n">hdulist</span><span class="p">,</span> <span class="n">extidx</span> <span class="o">=</span> <span class="n">_getext</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">222</span>     <span class="n">hdu</span> <span class="o">=</span> <span class="n">hdulist</span><span class="p">[</span><span class="n">extidx</span><span class="p">]</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/astropy/io/fits/convenience.py:1113,</span> in <span class="ni">_getext</span><span class="nt">(filename, mode, ext, extname, extver, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1110</span> <span class="k">elif</span> <span class="n">extver</span> <span class="ow">and</span> <span class="n">extname</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1111</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;extver alone cannot specify an extension.&quot;</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1113</span> <span class="n">hdulist</span> <span class="o">=</span> <span class="n">fitsopen</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1115</span> <span class="k">return</span> <span class="n">hdulist</span><span class="p">,</span> <span class="n">ext</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/astropy/io/fits/hdu/hdulist.py:213,</span> in <span class="ni">fitsopen</span><span class="nt">(name, mode, memmap, save_backup, cache, lazy_load_hdus, ignore_missing_simple, use_fsspec, fsspec_kwargs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">211</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Empty filename: </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">213</span> <span class="k">return</span> <span class="n">HDUList</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="n">name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span>     <span class="n">memmap</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="n">save_backup</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="n">cache</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="n">lazy_load_hdus</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="n">ignore_missing_simple</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span>     <span class="n">use_fsspec</span><span class="o">=</span><span class="n">use_fsspec</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">222</span>     <span class="n">fsspec_kwargs</span><span class="o">=</span><span class="n">fsspec_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span> <span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/astropy/io/fits/hdu/hdulist.py:476,</span> in <span class="ni">HDUList.fromfile</span><span class="nt">(cls, fileobj, mode, memmap, save_backup, cache, lazy_load_hdus, ignore_missing_simple, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">457</span> <span class="nd">@classmethod</span>
-<span class="g g-Whitespace">    </span><span class="mi">458</span> <span class="k">def</span> <span class="nf">fromfile</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">459</span>     <span class="bp">cls</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">468</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">470</span><span class="sd">     Creates an `HDUList` instance from a file-like object.</span>
-<span class="g g-Whitespace">    </span><span class="mi">471</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">474</span><span class="sd">     documentation for details of the parameters accepted by this method).</span>
-<span class="g g-Whitespace">    </span><span class="mi">475</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">476</span>     <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_readfrom</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">477</span>         <span class="n">fileobj</span><span class="o">=</span><span class="n">fileobj</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">478</span>         <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">479</span>         <span class="n">memmap</span><span class="o">=</span><span class="n">memmap</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">480</span>         <span class="n">save_backup</span><span class="o">=</span><span class="n">save_backup</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">481</span>         <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">482</span>         <span class="n">ignore_missing_simple</span><span class="o">=</span><span class="n">ignore_missing_simple</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span>         <span class="n">lazy_load_hdus</span><span class="o">=</span><span class="n">lazy_load_hdus</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">484</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span>     <span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/astropy/io/fits/hdu/hdulist.py:1146,</span> in <span class="ni">HDUList._readfrom</span><span class="nt">(cls, fileobj, data, mode, memmap, cache, lazy_load_hdus, ignore_missing_simple, use_fsspec, fsspec_kwargs, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1143</span> <span class="k">if</span> <span class="n">fileobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1144</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">_File</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1145</span>         <span class="c1"># instantiate a FITS file object (ffo)</span>
-<span class="ne">-&gt; </span><span class="mi">1146</span>         <span class="n">fileobj</span> <span class="o">=</span> <span class="n">_File</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1147</span>             <span class="n">fileobj</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1148</span>             <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1149</span>             <span class="n">memmap</span><span class="o">=</span><span class="n">memmap</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1150</span>             <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1151</span>             <span class="n">use_fsspec</span><span class="o">=</span><span class="n">use_fsspec</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1152</span>             <span class="n">fsspec_kwargs</span><span class="o">=</span><span class="n">fsspec_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1153</span>         <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1154</span>     <span class="c1"># The Astropy mode is determined by the _File initializer if the</span>
-<span class="g g-Whitespace">   </span><span class="mi">1155</span>     <span class="c1"># supplied mode was None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1156</span>     <span class="n">mode</span> <span class="o">=</span> <span class="n">fileobj</span><span class="o">.</span><span class="n">mode</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/astropy/io/fits/file.py:217,</span> in <span class="ni">_File.__init__</span><span class="nt">(self, fileobj, mode, memmap, overwrite, cache, use_fsspec, fsspec_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_open_fileobj</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)):</span>
-<span class="ne">--&gt; </span><span class="mi">217</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_open_filename</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">218</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_open_filelike</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/astropy/io/fits/file.py:626,</span> in <span class="ni">_File._open_filename</span><span class="nt">(self, filename, mode, overwrite)</span>
-<span class="g g-Whitespace">    </span><span class="mi">623</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">625</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_try_read_compressed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">magic</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="n">ext</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">626</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">IO_FITS_MODES</span><span class="p">[</span><span class="n">mode</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">627</span>     <span class="bp">self</span><span class="o">.</span><span class="n">close_on_error</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">629</span> <span class="c1"># Make certain we&#39;re back at the beginning of the file</span>
-<span class="g g-Whitespace">    </span><span class="mi">630</span> <span class="c1"># BZ2File does not support seek when the file is open for writing, but</span>
-<span class="g g-Whitespace">    </span><span class="mi">631</span> <span class="c1"># when opening a file for write, bz2.BZ2File always truncates anyway.</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./fits/hlsp_muscles_multi_multi_gj176_broadband_v22_adapt-const-res-sed.fits&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hlsp_muscles_multi_multi_gj176_broadband_v22_adapt-var-res-sed.fits already downloaded
+./fits/hlsp_muscles_multi_multi_gj176_broadband_v22_adapt-var-res-sed.fits
 </pre></div>
 </div>
 </div>
@@ -660,7 +555,7 @@ mv: rename hlsp_muscles_multi_multi_gj176_broadband_v22_adapt-const-res-sed.fits
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "08e8db911fcd40e498748bc77f037d23", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "7757d1b2d15f4a31ba31dee49da5b399", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Target model: ROCKE-3D
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "295034dd7f644bc586b172b32f865adb", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "6f99ce6ff7a4418c844811bc2034c6e6", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Target model: WACCM
 </pre></div>
 </div>
 </div>
@@ -708,8 +603,16 @@ mv: rename hlsp_muscles_multi_multi_gj176_broadband_v22_adapt-const-res-sed.fits
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File already downloaded
-Total stellar irradiance from original file relative to the Sun: 6.949514515971132e-16
-Scaled total stellar irradiance relative to the Sun: 1.0000000000000004
+Total stellar irradiance from original file relative to the Sun: 9.068187402848798e-15
+Scaled total stellar irradiance relative to the Sun: 1.0000000000000002
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">star_name</span> <span class="o">==</span> <span class="s1">&#39;GJ 176&#39;</span><span class="p">):</span>
+    <span class="n">star_name</span> <span class="o">=</span> <span class="s1">&#39;HD 285968&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -725,6 +628,8 @@ Scaled total stellar irradiance relative to the Sun: 1.0000000000000004
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://exoplanetarchive.ipac.caltech.edu/TAP/sync&#39;</span>
 <span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;?query=select+pl_name,hostname,st_lum,pl_orbsmax,st_teff,rowupdate+from+ps&amp;format=csv&#39;</span>
 <span class="n">NASA_Exo_Archive</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="o">+</span><span class="n">query</span><span class="p">)</span>
+
+<span class="c1">#star_name = star_name.replace(&quot; &quot;, &quot;&quot;)</span>
 
 <span class="c1"># set Spectra_name_same_as_host_name = False if looking at exoplanets around a different </span>
 <span class="c1"># star to the ones in the MUSCLES database, i.e., if you want spectra for an M8 star but </span>
@@ -757,7 +662,7 @@ Scaled total stellar irradiance relative to the Sun: 1.0000000000000004
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "ed106bd171d740b38e22abb0d9632954", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b097ded3dd5643509c3e8aaff51c2bd3", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="rebin-spectra-to-target-model-and-rescale-to-exoplanet-irradiance">
@@ -782,12 +687,12 @@ Scaled total stellar irradiance relative to the Sun: 1.0000000000000004
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>semi-major axis of GJ 1132 b = 0.0153 AU
-Star has 0.004375221051582521 times luminosity of Sun
-GJ 1132 b recieves 18.690337270205994 times flux recieved by Earth
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>semi-major axis of HD 285968 b = 0.066 AU
+Star has 0.03365115693754907 times luminosity of Sun
+HD 285968 b recieves 7.725242639474073 times flux recieved by Earth
 
-Total stellar irradiance from Sun spectra is: 1359915.06 W/m3
-Scaled total stellar irradiance relative to the Sun: 18.689169890441473
+Total stellar irradiance from Sun spectra is: 1359832.22 mW/m2/nm
+Scaled total stellar irradiance relative to the Sun: 7.724289599711078
 </pre></div>
 </div>
 </div>
@@ -813,7 +718,7 @@ Scaled total stellar irradiance relative to the Sun: 18.689169890441473
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e3b5fa2055aab1c735e59e663b74f1ff84bc105bc2dfd4525781774951d33a52.png" src="../_images/e3b5fa2055aab1c735e59e663b74f1ff84bc105bc2dfd4525781774951d33a52.png" />
+<img alt="../_images/992c041fb6575d5b95b4cb62fbe5287d7d0546a485f1b6bc8615fd5fe9f74179.png" src="../_images/992c041fb6575d5b95b4cb62fbe5287d7d0546a485f1b6bc8615fd5fe9f74179.png" />
 </div>
 </div>
 </section>
