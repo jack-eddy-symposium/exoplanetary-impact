@@ -23,9 +23,14 @@ def download_data(url, data_dir="./fits"):
         print(data_file, "already downloaded")
     else:
         print("\nDownloading data...\n", data_file)
-        cmd = 'wget '+url+'; mv '+data_file+' '+data_dir
+        try:
+            cmd = 'wget '+url+'; mv '+data_file+' '+data_dir
+            os.system(cmd)
+        except:
+            cmd = 'curl -O'+url+'; mv '+data_file+' '+data_dir
+            os.system(cmd)
         print(cmd)
-        os.system(cmd)
+        
         
     return os.path.join(data_dir, data_file)
 
